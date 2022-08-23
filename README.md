@@ -1,24 +1,75 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type      | Options                       |
+| ------------------ | ------    | -----------                   |
+| nickname           | string    | null: false                   |
+| email              | string    | null: false, unique: true     |
+| encrypted_password | string    | null: false                   |
+| created_at         | datetime  | null: false                   |
+| updated_at         | datetime  | null: false                   |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :likes
+- has_many :posts
+- has_many :comments
 
-* Configuration
+## posts テーブル（軸）
 
-* Database creation
+| Column             | Type      | Options                      |
+| ------------------ | ------    | -----------                  |
+| user               | references| null: false,foreign_key: true|
+| content            | text      | null: false                  |
+| image              |           |                              |
+| created_at         | datetime  | null: false                  |
+| prefecture_id      | integer   | null: false                  |
+| city_id            | string    | null: false                  |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :likes
+- has_many :comments
+- has_many :prefectures
 
-* Services (job queues, cache servers, search engines, etc.)
+## likes テーブル（いいね機能）
 
-* Deployment instructions
+| Column             | Type      | Options                      |
+| ------------------ | ------    | -----------                  |
+| user               | references| null: false,foreign_key: true|
+| post               | references| null: false,foreign_key: true|
+| created_at         | datetime  | null: false                  |
+| updated_at         | datetime  | null: false                  |
 
-* ...
+### Association
+
+- belongs_to :user
+- belongs_to :post
+
+## prefectures テーブル（都道府県）
+
+| Column             | Type      | Options                      |
+| ------------------ | ------    | -----------                  |
+| name               | string    | null: false                  |
+| prefecture_id      | integer   | null: false                  |
+
+### Association
+
+- belongs_to :post
+
+## comments テーブル（コメント投稿）
+
+| Column             | Type      | Options                      |
+| ------------------ | ------    | -----------                  |
+| user               | references| null: false,foreign_key: true|
+| post               | references| null: false,foreign_key: true|
+| content            | text      | null: false                  |
+| created_at         | datetime  | null: false                  |
+| updated_at         | datetime  | null: false                  |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
