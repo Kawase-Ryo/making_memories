@@ -59,12 +59,19 @@
 
   //いいね機能
   
-  .love {
-    background-image: url("~parts5");
+  .loved {
+    background-image: url("~parts7");
     background-repeat: no-repeat;
     height: 36px;
     width: 36px;
     background-size: 36px !important;
+  }
+  
+  .hide-text {
+    display: block;
+    overflow: hidden;
+    text-indent: 110%;
+    white-space: nowrap;
   }
   
   .comment {
@@ -86,7 +93,6 @@
     text-decoration: none;
     color: #262626;
   }
-  
 
   .post-wrap .col-md-8 {
     padding: 0px;
