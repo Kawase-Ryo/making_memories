@@ -9,7 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, length: { maximum: 50 } #presence: trueは値が空ではないということ確かめるバリデーション
-  validates :username, uniqueness: true
+  validates :username, uniqueness: true #uniquenessはオブジェクトが保存される直前に、属性の値が一意（unique）であり重複していないことを検証
   def update_without_current_password(params, *options)
 
     if params[:password].blank? && params[:password_confirmation].blank?
