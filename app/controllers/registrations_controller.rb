@@ -1,13 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
 
-    protected
-  
-    def update_resource(resource, params)
-      resource.update_without_current_password(params)
-    end
+  protected
 
-    def after_update_path_for(resource)
-        user_path(resource)
-      end
-      
+  def update_resource(resource, params)
+    resource.update_without_current_password(params)
   end
+
+  def after_update_path_for(resource)
+      user_path(resource)
+  end
+  #after_update_path_forアカウントをアップデートさせた後、どのパスに遷移させるかを指定できる
+
+end
