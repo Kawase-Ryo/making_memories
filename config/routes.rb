@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # ここにusersコントローラーのshowアクションのルーティングを追加する
   get '/users/:id', to: 'users#show', as: 'user'
   
+  # resourcesメソッドは以下の7つのアクションのルーティングを自動で生成
   resources :posts, only: %i(index new create show destroy) do
     resources :photos, only: %i(create)
     resources :likes, only: %i(create destroy)

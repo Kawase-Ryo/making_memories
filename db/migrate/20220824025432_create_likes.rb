@@ -4,6 +4,7 @@ class CreateLikes < ActiveRecord::Migration[6.0]
 
       t.references :post, foreign_key: true, null: false
       t.references :user, foreign_key: true, null: false
+      # foreign_key: trueは外部キーとして使用するということを示している
 
       t.timestamps
     end
