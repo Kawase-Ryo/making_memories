@@ -1,3 +1,5 @@
+<%# 投稿機能 %>
+
 <div class="d-flex flex-column align-items-center mt-3">
   <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
     <div class="card">
@@ -5,6 +7,8 @@
         投稿画面
       </div>
       <div class="card-body">
+
+      <%# HTMLフォーム生成メソッド。モデルオプションに、先ほどコントローラー定義した@postをモデルオブジェクトとして扱う。こうすることで、URLとHTTPメソッドを自動推測。今回@postは空なので、createアクションに飛ぶ。（空じゃないときはupdateアクションに飛ぶ。）%>
         <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
           <div class="form-group row mt-2">
             <div class="col-auto pr-0">
@@ -15,14 +19,17 @@
             </div>
           </div>
           <div class="mb-3">
-
+          
+          <%# fiels_forを使うことで、子モデル（今回でいうとPhotoモデル）に変更を加える %>
             <%= f.fields_for :photos do |i| %>
               <%= i.file_field :image %>
             <% end %>
+          <%# fiels_forを使うことで、子モデル（今回でいうとPhotoモデル）に変更を加える %>
 
           </div>
           <%= f.submit "投稿する", class: "btn btn-primary" %>
         <% end %>
+      <%# HTMLフォーム生成メソッド。モデルオプションに、先ほどコントローラー定義した@postをモデルオブジェクトとして扱う。こうすることで、URLとHTTPメソッドを自動推測。今回@postは空なので、createアクションに飛ぶ。（空じゃないときはupdateアクションに飛ぶ。）%>
       </div>
     </div>
   </div>

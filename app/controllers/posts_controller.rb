@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i(show destroy)
   # 重複するコードがあると冗長なので、before_actionを使ってshowアクションとdestroyアクションが呼ばれる前に@postを読み込むように書き換える
 
+  # newはインスタンスを作成するメソッド
   def new
       @post = Post.new
       @post.photos.build
@@ -13,7 +14,9 @@ class PostsController < ApplicationController
 
   def create
       @post = Post.new(post_params)
+  # if @post.photos.present?というコードで投稿の写真が存在するか確認
       if @post.photos.present?
+  # saveメソッドはオブジェクト（今回の場合@post）をデータベースに保存。redirect_toで指定したページに遷移。今回の場合、投稿が保存されても、されなくてもroot_pathにリダイレクトする
         @post.save
         redirect_to root_path
         flash[:notice] = "投稿が保存されました"
@@ -24,6 +27,7 @@ class PostsController < ApplicationController
     end
 
   def index
+    # limitメソッドは取り出すレコード数の上限を指定。Post.limit(10)とすることで、投稿のレコードは最大10個までしか取得できない.N+1問題
       @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
   end
 

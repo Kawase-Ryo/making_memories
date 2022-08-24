@@ -11,6 +11,7 @@ module MakingMemories
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # # 日本語表記の設定
     config.i18n.default_locale = :ja
 
     # Settings in config/environments/* take precedence over those specified here.
