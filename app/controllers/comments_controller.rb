@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
-    
-# ユーザーがサインインしていない状態でコメントをしても、誰がコメントしたか分からない。なのでauthenticate_user!を使ってサインイン済みユーザーのみにアクセス許可を与える
+
+    # ユーザーがサインインしていない状態でコメントをしても、誰がコメントしたか分からない。なのでauthenticate_user!を使ってサインイン済みユーザーのみにアクセス許可を与える
     before_action :authenticate_user!
     
+    # comments#create、つまりcommentsコントローラーのcreateアクションを処理するように指定
     def create
         @comment = Comment.new(comment_params)
         @post = @comment.post
