@@ -1,17 +1,15 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :posts, dependent: :destroy
+  has_many :likes
+  has_many :comments
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many :posts, dependent: :destroy
-
-         has_many :likes
-
-         has_many :comments
-
-  validates :name, presence: true, length: { maximum: 50 }
-
+  validates :name, presence: true, length: { maximum: 50 } #presence: trueは値が空ではないということ確かめるバリデーション
+  validates :username, uniqueness: true
   def update_without_current_password(params, *options)
 
     if params[:password].blank? && params[:password_confirmation].blank?
@@ -23,5 +21,6 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+  #パスワードを入力しなくてもプロフィールの情報を編集できる。またパスワードも編集できる。
 
 end
