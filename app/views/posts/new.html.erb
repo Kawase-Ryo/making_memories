@@ -15,7 +15,7 @@
               <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
             </div>
             <div class="col pl-0">
-              <%= f.text_field :caption, class: "form-control border-0", placeholder: "キャプションを書く" %>
+              <%= f.text_field :caption, class: "form-control border-0", placeholder: "タイトル" %>
             </div>
           </div>
           <div class="mb-3">
@@ -27,7 +27,7 @@
           <%# fiels_forを使うことで、子モデル（今回でいうとPhotoモデル）に変更を加える %>
 
           </div>
-          <%= f.submit "投稿する", class: "btn btn-primary" %>
+          <%= link_to "投稿する", posts_path, class: "btn btn-primary" %>
         <% end %>
       <%# HTMLフォーム生成メソッド。モデルオプションに、先ほどコントローラー定義した@postをモデルオブジェクトとして扱う。こうすることで、URLとHTTPメソッドを自動推測。今回@postは空なので、createアクションに飛ぶ。（空じゃないときはupdateアクションに飛ぶ。）%>
       </div>
