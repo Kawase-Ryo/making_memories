@@ -3,6 +3,9 @@
 @import "layouts/navbar";
 //layouts/navbar.scssファイルのコードを読み込めるようになる
 
+@import "pages/index";
+//layouts/navbar.scssファイルのコードを読み込めるようになる
+
 @import "common";
 @import "users/devise";
 //scssファイルのコードが読み込む
