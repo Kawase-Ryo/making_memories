@@ -16,9 +16,11 @@
   <body>
 
   <div id="wrapper">
-    <%= render 'partial/navbar' if current_user %>
+    <%#= render 'partial/navbar' if current_user %>
     <%#_partial/navbar部分テンプレート呼び出し、「if current_user」という条件式を追加することでログインしているかを確認してログインしていなかった場合にNavbarを非表示にするということが可能%>
-    
+
+    <%= render 'partial/navbar'%>
+
     <% if flash[:notice] %>
       <div class="alert alert-info"><%= flash[:notice] %></div>
     <% end %>
@@ -27,9 +29,7 @@
     <% end %>
     <%#メールアドレスが正しくない状態でログインしようとしたときに、ログインに失敗した旨をメッセージとして表示%>
 
-    <div class="container">
       <%= yield %>
-    </div>
 
       <%= render 'partial/footer' %>
     </div>

@@ -1,8 +1,7 @@
-<% if user_signed_in? %> 
-<%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
-<% end %>
+<%# トップページ %>
+
 <div class="top-wrapper text-center">
-  <div class="container top-container">
+  <div class="top-content">
     <h1 class='service-title'>
     旅の思い出を
     </h1>
@@ -11,5 +10,3 @@
     </h2>
   </div>
 </div>
-
-<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
