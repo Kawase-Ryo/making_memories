@@ -10,7 +10,8 @@ class User < ApplicationRecord
 
   #presence: trueは値が空ではないということ確かめるバリデーション
   validates :name, presence: true, length: { maximum: 50 } 
-  validates :username, uniqueness: true 
+  validates :username, uniqueness: true
+  validates :introduction, presence: false, length: { maximum: 50 } 
   #uniquenessはオブジェクトが保存される直前に、属性の値が一意（unique）であり重複していないことを検証
 
    #パスワードを入力しなくてもプロフィールの情報を編集できる。またパスワードも編集できる。
