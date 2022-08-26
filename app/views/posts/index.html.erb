@@ -40,7 +40,11 @@
               <% end %>
             </div>
 
-            <%= link_to "", "#", class: "comment" %>
+            <%# コメントをクリックして、投稿詳細ページに遷移するように実装 %>
+            <%= link_to(post_path(post)) do %>
+              <%= link_to "", post_path(post), class: "comment" %>
+            <% end %>
+            <%# コメントをクリックして、投稿詳細ページに遷移するように実装 %>
           </div>
           
           <div id="like-text-post-<%= post.id.to_s %>">
