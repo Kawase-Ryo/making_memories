@@ -75,7 +75,7 @@
   overflow: auto;
 }
 
-.postShow-wrap {
+.post-wrap {
   border: 1px solid #e6e6e6;
   margin: 40px;
 }
@@ -94,6 +94,10 @@
   background-size: 20px !important;
   color: #262626;
   font-size: 20px;
+}
+
+.m-2 h6 {
+  color: grey;
 }
 
 //いいね押されての表示

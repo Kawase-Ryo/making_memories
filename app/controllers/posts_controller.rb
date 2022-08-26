@@ -16,15 +16,16 @@ class PostsController < ApplicationController
       @post = Post.new(post_params)
   # if @post.photos.present?というコードで投稿の写真が存在するか確認
       if @post.photos.present?
-  # saveメソッドはオブジェクト（今回の場合@post）をデータベースに保存。redirect_toで指定したページに遷移。今回の場合、投稿が保存されても、されなくてもroot_pathにリダイレクトする
+  # saveメソッドはオブジェクト（今回の場合@post）をデータベースに保存。redirect_toで指定したページに遷移。今回の場合、投稿が保存されても、されなくてもposts_pathにリダイレクトする
         @post.save
-        redirect_to root_path
+        redirect_to posts_path
         flash[:notice] = "投稿が保存されました"
       else
-        redirect_to root_path
+        @post.save
+        redirect_to new_post_path
         flash[:alert] = "投稿に失敗しました"
       end
-    end
+  end
 
   def index
     # limitメソッドは取り出すレコード数の上限を指定。Post.limit(10)とすることで、投稿のレコードは最大10個までしか取得できない.N+1問題
@@ -42,12 +43,12 @@ class PostsController < ApplicationController
       flash[:alert] = "投稿の削除に失敗しました"
     # @post.destroyが真だったら、「投稿が削除されました」というフラッシュメッセージを表示
     end
-    redirect_to root_path
+    redirect_to posts_path
   end
   
   private
      def post_params
-        params.require(:post).permit(:caption, photos_attributes: [:image]).merge(user_id: current_user.id)
+        params.require(:post).permit(:caption, :description, photos_attributes: [:image]).merge(user_id: current_user.id)
      end
 
      # set_postというメソッドを追加する
