@@ -25,9 +25,9 @@
               <%= i.file_field :image %>
             <% end %>
           <%# fiels_forを使うことで、子モデル（今回でいうとPhotoモデル）に変更を加える %>
-
+          <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
           </div>
-          <%= link_to "投稿する", posts_path, class: "btn btn-primary" %>
+          <%= f.submit "投稿する", class: "btn btn-primary" %>
         <% end %>
       <%# HTMLフォーム生成メソッド。モデルオプションに、先ほどコントローラー定義した@postをモデルオブジェクトとして扱う。こうすることで、URLとHTTPメソッドを自動推測。今回@postは空なので、createアクションに飛ぶ。（空じゃないときはupdateアクションに飛ぶ。）%>
       </div>
