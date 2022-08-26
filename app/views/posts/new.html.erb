@@ -23,9 +23,9 @@
           <%# fiels_forを使うことで、子モデル（今回でいうとPhotoモデル）に変更を加える %>
             <%= f.fields_for :photos do |i| %>
               <%= i.file_field :image %>
+              <%= f.text_area :description, class: "form-control border-0", placeholder: "説明文・・・", rows:"7" ,maxlength:"100" %>
             <% end %>
           <%# fiels_forを使うことで、子モデル（今回でいうとPhotoモデル）に変更を加える %>
-          <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
           </div>
           <%= f.submit "投稿する", class: "btn btn-primary" %>
         <% end %>

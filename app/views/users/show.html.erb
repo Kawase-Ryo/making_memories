@@ -6,7 +6,7 @@
     </div>
     <div class="col-md-8">
       <div class="row">
-        <h1><%= @user.username %></h1>
+        <h1><%= @user.name %></h1>
         
         <%#サインインしているユーザーが@userと一致したら、真を返すという条件式%>
         <% if @user == current_user %>
@@ -36,11 +36,11 @@
       </div>
 
         <div class="row">
-          <p>
-            <%= @user.email %>
-          </p>
+          <h4>
+            <%= @user.username %>
+          </h4>
         </div>
-
+        
     </div>
   </div>
 </div>
