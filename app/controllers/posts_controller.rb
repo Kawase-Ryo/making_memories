@@ -28,8 +28,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    # limitメソッドは取り出すレコード数の上限を指定。Post.limit(10)とすることで、投稿のレコードは最大10個までしか取得できない.N+1問題
-      @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
+    @posts = Post.includes(:photos, :user).order('created_at DESC')
+    # limitメソッドは取り出すレコード数の上限を指定。Post.limit(10)とすることで、投稿のレコードは最大10個までしか取得できない.includesでN+1問題
+      # @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
   end
 
   def show

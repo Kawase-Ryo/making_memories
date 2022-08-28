@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :username])
       devise_parameter_sanitizer.permit(:account_update, keys: [:name, :username, :introduction])
+      devise_parameter_sanitizer.permit(:account_update, keys: %i(avatar)) # deviseコントローラにストロングパラメータを追加（プロフィール画像）
   end
   #nameとusernameカラムを保存できるようにする記述はサインアップやアカウントをアップデートするときだけにしか必要
 

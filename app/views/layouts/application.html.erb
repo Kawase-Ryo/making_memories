@@ -23,6 +23,7 @@
 
     <% if flash[:notice] %>
       <div class="alert alert-info"><%= flash[:notice] %></div>
+    <%#メールアドレスが正しくない状態でログインしようとしたときに、成功した旨をメッセージとして表示%>
     <% end %>
     <% if flash[:alert] %>
       <div class="alert alert-danger"><%= flash[:alert] %></div>

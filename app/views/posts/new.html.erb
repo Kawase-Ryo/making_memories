@@ -12,7 +12,14 @@
         <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
           <div class="form-group row mt-2">
             <div class="col-auto pr-0">
-              <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
+              <%# プロフィールアイコンがあるかないかの条件式 %>
+            <% if @user %>
+              <% if @user.avatar.attached? %>
+                <%= image_tag @user.avatar, class: "post-profile-icon" %> 
+              <% else %>
+                <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
+              <% end %>
+            <% end %>
             </div>
             <div class="col pl-0">
               <%= f.text_field :caption, class: "form-control border-0", placeholder: "タイトル" %>
@@ -23,7 +30,8 @@
           <%# fiels_forを使うことで、子モデル（今回でいうとPhotoモデル）に変更を加える %>
             <%= f.fields_for :photos do |i| %>
               <%= i.file_field :image %>
-              <%= f.text_area :description, class: "form-control border-0", placeholder: "説明文・・・", rows:"7" ,maxlength:"100" %>
+              <%= f.text_area :description, class: "form-control border-0", placeholder: "投稿説明文・・・", rows:"7" ,maxlength:"100" %>
+              <%# f.text_area :descriptionカラム追加で説明文を加える %>
             <% end %>
           <%# fiels_forを使うことで、子モデル（今回でいうとPhotoモデル）に変更を加える %>
           </div>

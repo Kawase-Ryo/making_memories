@@ -2,7 +2,11 @@
 <div class="profile-wrap">
   <div class="row">
     <div class="col-md-4">
-      <%= image_tag avatar_url(@user), class: "round-img" %>
+      <% if @user.avatar.attached? %> <%# プロフィール画像 %>
+         <%= image_tag @user.avatar, class: "round-img" %> <%# プロフィール画像を選択できる %>
+      <% else %>
+        <%= image_tag avatar_url(@user), class: "round-img" %> <%# プロフィール画像何も選択してなければ %>
+      <% end %>  
     </div>
     <div class="col-md-8">
       <div class="row">
