@@ -12,13 +12,11 @@
         <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
           <div class="form-group row mt-2">
             <div class="col-auto pr-0">
-              <%# プロフィールアイコンがあるかないかの条件式 %>
-            <% if @user %>
-              <% if @user.avatar.attached? %>
-                <%= image_tag @user.avatar, class: "post-profile-icon" %> 
-              <% else %>
+            <%# プロフィールアイコンが設定してあるかないかの条件式 %>
+            <% if current_user %>
+                <%= image_tag current_user.avatar, class: "post-profile-icon" %> 
+            <% else %>
                 <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
-              <% end %>
             <% end %>
             </div>
             <div class="col pl-0">

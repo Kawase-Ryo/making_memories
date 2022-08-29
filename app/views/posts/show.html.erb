@@ -12,13 +12,12 @@
         <div class="card-right-comment">
           <div class="card-right-name">
             <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
-            <%# プロフィールアイコンがあるかないかの条件式 %>
-            <% if @user %>
-              <% if @user.avatar.attached? %>
-                <%= image_tag @user.avatar, class: "post-profile-icon" %> 
-              <% else %>
-                <%= image_tag avatar_url(@post.user.avatar), class: "post-profile-icon" %>
-              <% end %>
+            <%# プロフィールアイコンが設定してあるかないかの条件式 %>
+            <% if current_user %>
+                <%= image_tag current_user.avatar, class: "post-profile-icon" %> 
+            <% else %>
+                <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
+            <% end %>
             <% end %>
             <%= link_to user_path(@post.user), class: "black-color no-text-decoration post-user-name",
               title: @post.user.name do %>
