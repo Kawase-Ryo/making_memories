@@ -4,13 +4,17 @@
       <div class="card">
         <div class="card-header align-items-center d-flex">
           <%= link_to user_path(post.user), class: "no-text-decoration" do %>
-            <%= image_tag avatar_url(post.user), class: "post-profile-icon" %>
+          <%# プロフィールアイコンが設定してあるかないかの条件式 %>
+          <% if current_user %>
+                <%= image_tag current_user.avatar, class: "post-profile-icon" %> 
+              <% else %>
+                <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
+          <% end %>
           <% end %>
           <%= link_to user_path(post.user), class: "black-color no-text-decoration",
             title: post.user.name do %>
             <strong><%= post.user.name %></strong>
           <% end %>
-
            <%# 投稿機能の削除機能 %>
           <% if post.user_id == current_user.id %>
           <%# 現在サインインしているユーザーと投稿したユーザーが等しければ、リンクを表示させる条件式 %>
@@ -54,7 +58,7 @@
           <div>
             <span><strong><%= post.user.name %></strong></span><br>
             <span>タイトル：<%= post.caption %></span><br>
-            <span>説明文：<%= post.description %></span>
+            <span>投稿説明：<%= post.description %></span>
             <%# 投稿日時をクリックしても、投稿詳細ページに遷移するように実装 %>
             <%#= link_to time_ago_in_words(post.created_at).upcase + "前", post_path(post), class: "post-time no-text-decoration" %>
 

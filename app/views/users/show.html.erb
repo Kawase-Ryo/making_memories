@@ -2,7 +2,12 @@
 <div class="profile-wrap">
   <div class="row">
     <div class="col-md-4">
-      <%= image_tag avatar_url(@user), class: "round-img" %>
+      <%# プロフィールアイコンが設定してあるかないかの条件式 %>
+      <% if @user.avatar.attached? %> <%# アイコン選択の判定 %>
+         <%= image_tag @user.avatar, class: "round-img" %> <%# アイコンを設定していれば %>
+      <% else %>
+        <%= image_tag avatar_url(@user), class: "round-img" %> <%# アイコンを何も選択してなければ %>
+      <% end %>  
     </div>
     <div class="col-md-8">
       <div class="row">

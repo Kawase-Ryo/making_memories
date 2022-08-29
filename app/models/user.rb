@@ -8,9 +8,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  #presence: trueは値が空ではないということ確かめるバリデーション
-  validates :name, presence: true, length: { maximum: 50 } 
-  validates :username, uniqueness: true
+  has_one_attached :avatar # :avatarの部分は用途に合わせて :image :photoでも可。今回はプロフィール画像でavatar
+
+  #presence: trueは値が空ではないということ確かめるバリデーション 
+  validates :email,        uniqueness: true
+  validates :name,         presence: true, length: { maximum: 50 } 
+  validates :username,     uniqueness: true, format: { with: /\A[a-z]+\z/, message: "は半角英字で入力して下さい" }
   validates :introduction, presence: false, length: { maximum: 50 } 
   #uniquenessはオブジェクトが保存される直前に、属性の値が一意（unique）であり重複していないことを検証
 
