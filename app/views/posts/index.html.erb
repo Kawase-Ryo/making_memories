@@ -1,15 +1,17 @@
+<%# 投稿ページ一覧 %>
+
 <% @posts.each do |post| %>
   <div class="col-md-8 col-md-2 mx-auto">
     <div class="card-wrap">
       <div class="card">
         <div class="card-header align-items-center d-flex">
           <%= link_to user_path(post.user), class: "no-text-decoration" do %>
-          <%# プロフィールアイコンが設定してあるかないかの条件式 %>
-          <% if current_user %>
-                <%= image_tag current_user.avatar, class: "post-profile-icon" %> 
-              <% else %>
-                <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
-          <% end %>
+            <%# プロフィールアイコンが設定してあるかないかの条件式 %>
+            <% if post.user.avatar.attached? %>
+                <%= image_tag post.user.avatar, class: "post-profile-icon" %> 
+             <% else %>
+                <%= image_tag avatar_url(post.user), class: "post-profile-icon" %>
+            <% end %>
           <% end %>
           <%= link_to user_path(post.user), class: "black-color no-text-decoration",
             title: post.user.name do %>
