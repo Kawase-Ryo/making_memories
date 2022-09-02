@@ -31,12 +31,11 @@
             <%= f.fields_for :photos do |i| %>
               <%= i.file_field :image %>
               <%= f.text_area :description, class: "form-control border-0", placeholder: "投稿説明文100文字まで・・・", rows:"7" ,maxlength:"100" %>
-              <%= f.text_field :address, class: "text-address", placeholder: "投稿所の住所を記入してください" %>
+              <%= f.text_field :address, class: "text-address", placeholder: "投稿場所の住所を入力してください" %>
             <% end %>
           <%# fiels_forを使うことで、子モデル（今回でいうとPhotoモデル）に変更を加える %>
           </div>
           <%= f.submit "投稿する", class: "btn btn-primary" %>
-          <%= link_to "もどる", new_post_path, class: "btn btn-primary" %>
         <% end %>
       <%# HTMLフォーム生成メソッド。モデルオプションに、先ほどコントローラー定義した@postをモデルオブジェクトとして扱う。こうすることで、URLとHTTPメソッドを自動推測。今回@postは空なので、createアクションに飛ぶ。（空じゃないときはupdateアクションに飛ぶ。）%>
       </div>

@@ -21,7 +21,6 @@ class PostsController < ApplicationController
         redirect_to posts_path
         flash[:notice] = "投稿が保存されました"
       else
-        @post.save
         redirect_to new_post_path
         flash[:alert] = "投稿に失敗しました"
       end
