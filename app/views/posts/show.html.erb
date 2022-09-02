@@ -85,28 +85,33 @@
                   <%= render 'comment_list', post: @post %>
               </div>
               <%# 投稿詳細ページでもコメントできるように実装 %>
+
+              <p>住所</p>
+              <p><%= @post.address %></p> <%# 住所名表示 %>
               <div id='map'></div>
 
                 <style>
                 #map {
-                  height: 300px;
-                  width: 400px;
+                  margin-bottom: 20px;
+                  height:  300px;
+                  width: 350px;
                 }
                 </style>
 
                 <script>
-                  let map
+                  let map // map という変数を定義 (letは後で書き換えることができる)
                   
-                  function initMap(){
-                    geocoder = new google.maps.Geocoder()
-                    var test ={lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
-                  
-                    map = new google.maps.Map(document.getElementById('map'), {
+                  function initMap(){ // mapの表示関数 (rubyでいう def initMap ~ end) 処理のまとまり
+                    geocoder = new google.maps.Geocoder()  // Geocoderのインスタンス(オブジェクト)を作成：GoogleMapAPIを使うための準備
+                    var test ={lat: <%= @post.latitude %>, lng: <%= @post.longitude %> };
+                    map = new google.maps.Map(document.getElementById('map'), {  // Mapクラスのインスタンスを作成(new)
                       center: test,
                       zoom: 15,
+                      mapTypeControl: false,  
+                      streetViewControl: false
                     });
 
-                    var contentString = '住所：<%= post.address %>';
+                    var contentString = '住所：<%= @post.address %>';
                     var infowindow = new google.maps.InfoWindow({
                       content: contentString
                     });
@@ -119,6 +124,7 @@
                   }
                 </script>
                 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"async defer></script>
+                <%= link_to "もどる", posts_path, class: "btn btn-primary" %>
             </div>
           </div>
       </div>
