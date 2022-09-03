@@ -59,9 +59,7 @@
               <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
             <% end %>
           </div>
-          <%# パスのところにidがついている箇所が2箇所ある。いいねを削除するためには、そのいいねに紐づいている投稿の情報が必要になる。また投稿には複数いいねをつけることができる。その複数のいいねのうち、どのいいねなのかを認識するために、いいねの情報も必要。なのでpost_likeに2つの引数を渡し、どの投稿の、どのいいねを削除するのかを指定する必要がある。今回のコードの場合、@post.idが投稿のidになる。また@post.liked_by(current_user)が現在ログインしているユーザーがいいねした投稿のidを指定%>
-          
-          <%# パスのところにidがついている箇所が2箇所ある。いいねを削除するためには、そのいいねに紐づいている投稿の情報が必要になる。また投稿には複数いいねをつけることができる。その複数のいいねのうち、どのいいねなのかを認識するために、いいねの情報も必要。なのでpost_likeに2つの引数を渡し、どの投稿の、どのいいねを削除するのかを指定する必要がある。今回のコードの場合、@post.idが投稿のidになる。また@post.liked_by(current_user)が現在ログインしているユーザーがいいねした投稿のidを指定%>
+
           <div id="like-text-post-<%= @post.id.to_s %>">
           <%= render "like_text", { likes: @post.likes } %>
           </div>
@@ -75,7 +73,7 @@
           <%= form_with model: [@post, Comment.new],  class: "w-100" do |f| %>
             <%= f.hidden_field :user_id, value: current_user.id %>
             <%= f.hidden_field :post_id, value: @post.id %>
-            <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
+            <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント100文字まで ...", autocomplete: :off, rows:"7" ,maxlength:"100" %>
           <% end %>
         </div>
         <%# 投稿詳細ページでもコメントできるように実装 %>
@@ -85,8 +83,63 @@
                   <%= render 'comment_list', post: @post %>
               </div>
               <%# 投稿詳細ページでもコメントできるように実装 %>
+
+              <p>住所</p>
+              <p><%= @post.address %></p> <%# 住所名表示 %>
+              <div id='map'></div>
+
+                <style>
+                #map {
+                  margin-bottom: 20px;
+                  height:  300px;
+                  width: 350px;
+                }
+                </style>
+
+                <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+
+              <script>
+                function initMap() {
+                  // 投稿から住所情報を抽出
+                  let inputAddress = '<%= @post.address %>';
+
+                  // mapインスタンスを初期化(緯度・経度はすぐに書き換えるので適当でOK）
+                  let map = new google.maps.Map(document.getElementById('map'), {  // Mapクラスのインスタンスを作成(new)
+                    center: {lat: 0, lng: 0},
+                    zoom: 15,
+                    mapTypeControl: false,
+                    streetViewControl: false
+                  });
+
+                  // Geocoderクラスのインスタンスを初期化（Geocoderのお作法）
+                  geocoder = new google.maps.Geocoder()
+
+                  geocoder.geocode({
+                    // Geocoder(住所から緯度・経度を取得するAPI）に住所情報を渡す
+                    'address': inputAddress
+                  }, function (results, status) {
+                    if (status == 'OK') { // 住所から緯度経度情報が見つかった場合
+                      // 地図の中心地を、住所に基づく緯度・経度に設定
+                      map.setCenter(results[0].geometry.location);
+
+                      // 中心にマーカーを置く（目印）
+                      marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                      });
+
+                    } else { // 緯度・経度が見つからなかった場合の処理　（存在しない地名を入力した時など）
+                      // <div id="display"></div> という、html 内の div 要素に文字を表示させる
+                      display.textContent = "<%= @post.address %>の地図を表示できませんでした"
+                    }
+                  });
+                }
+
+              </script>
+              <%= link_to "もどる", posts_path, class: "btn btn-primary" %>
             </div>
           </div>
+        </div>
       </div>
     </div>
   </div>

@@ -39,7 +39,7 @@
 
           <div class="form-group">
             <%= f.label :introduction, "自己紹介" %>
-            <%= f.text_area :introduction, autofocus: true, class: "form-control" %>
+            <%= f.text_area :introduction, autofocus: true, class: "form-control", rows:"7" ,maxlength:"100" %>
           </div>
 
           <%= f.submit "変更する", class: "btn btn-primary" %>
