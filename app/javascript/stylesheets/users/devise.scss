@@ -58,3 +58,12 @@
       background-color: #fafafa;
     }
   }
+
+  @media screen and (max-width: 489px) {
+    .main {
+      padding: 75px 0;
+    }
+    .devise-card {
+      background-color: #fafafa;
+  }
+}

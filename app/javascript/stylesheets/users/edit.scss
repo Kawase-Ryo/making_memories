@@ -17,3 +17,15 @@
   .self-introduction {
     border: 1px solid #e6e6e6;
   }
+
+  @media screen and (max-width: 768px) {
+    .profile-form-wrap {
+      width: 100&;
+    }
+  }
+  
+  @media screen and (max-width: 489px) {
+    .profile-form-wrap {
+      width: 100&;
+    }
+  }
