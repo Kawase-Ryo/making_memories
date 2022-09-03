@@ -23,4 +23,27 @@
         width: 800px;
       }
     }
+
+    @media screen and (max-width: 768px) {
+      .top-wrapper {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-content {
+        width: 100%;
+      }
+    }
   
+    @media screen and (max-width: 489px) {
+      .top-wrapper {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 489px) {
+      .top-content {
+        width: 100%;
+      }
+    }
