@@ -126,3 +126,18 @@
   margin: 5px 0 0 10px;
   background-size: 11px !important;
 }
+
+//Google map
+.title-map {
+  font-family: 'Hiragino Maru Gothic Pro', 'MS UI Gothic', sans-serif;
+}
+
+.text-address {
+  width: 50%; /*親要素いっぱい広げる*/
+  padding: 10px 10px; /*ボックスを大きくする*/
+  margin: 20px 0px;
+  font-size: 16px;
+  border-radius: 3px; /*ボックス角の丸み*/
+  border: 2px solid #ddd; /*枠線*/
+  box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}

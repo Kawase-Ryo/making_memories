@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     resources :likes, only: %i(create destroy)
   # ルーティングをネスト（入れ子）にすることで、親子関係をルーティングで表すことができる。commentsに関してはpostsに対して「子」の関係になるので、ネストすることで、どの投稿に紐づくかを明示  
     resources :comments, only: %i(create destroy)
+    resources :maps
   end
   #onlyを使うと、自動で生成される7つのアクションのうちどのアクションのルーティングを追加するか絞り込むことができる
 
-end
+end                                                
