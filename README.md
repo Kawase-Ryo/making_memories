@@ -4,9 +4,12 @@
 
 | Column             | Type      | Options                       |
 | ------------------ | ------    | -----------                   |
-| nickname           | string    | null: false                   |
+| name               | string    | null: false                   |
 | email              | string    | null: false, unique: true     |
 | encrypted_password | string    | null: false                   |
+| profile_photo      | string    | null: false                   |
+| username           | string    | null: false                   |
+| introduction       | text      | null: false                   |
 | created_at         | datetime  | null: false                   |
 | updated_at         | datetime  | null: false                   |
 
@@ -16,30 +19,32 @@
 - has_many :posts
 - has_many :comments
 
-## posts テーブル（軸）
+## posts テーブル
 
 | Column             | Type      | Options                      |
 | ------------------ | ------    | -----------                  |
-| user               | references| null: false,foreign_key: true|
-| content            | text      | null: false                  |
+| user_id            |           | null: false                  |
+| address            | string    |                              |
+| caption            | string    |                              |
 | image              |           |                              |
+| description        | text      |                              |
 | created_at         | datetime  | null: false                  |
-| prefecture_id      | integer   | null: false                  |
-| city_id            | string    | null: false                  |
+| updated_at         | datetime  | null: false                  |
+| latitude           | float     |                              |
+| longitude          | float     |                              |
 
 ### Association
 
 - belongs_to :user
 - has_many :likes
 - has_many :comments
-- has_many :prefectures
 
 ## likes テーブル（いいね機能）
 
 | Column             | Type      | Options                      |
 | ------------------ | ------    | -----------                  |
-| user               | references| null: false,foreign_key: true|
-| post               | references| null: false,foreign_key: true|
+| user_id            |           | null: false                  |
+| post_id            |           | null: false                  |
 | created_at         | datetime  | null: false                  |
 | updated_at         | datetime  | null: false                  |
 
@@ -48,12 +53,14 @@
 - belongs_to :user
 - belongs_to :post
 
-## prefectures テーブル（都道府県）
+## photos テーブル
 
 | Column             | Type      | Options                      |
 | ------------------ | ------    | -----------                  |
 | name               | string    | null: false                  |
-| prefecture_id      | integer   | null: false                  |
+| image              | string    | null: false                  |
+| created_at         | datetime  | null: false                  |
+| updated_at         | datetime  | null: false                  |
 
 ### Association
 
@@ -63,9 +70,9 @@
 
 | Column             | Type      | Options                      |
 | ------------------ | ------    | -----------                  |
-| user               | references| null: false,foreign_key: true|
-| post               | references| null: false,foreign_key: true|
-| content            | text      | null: false                  |
+| user_id            |           | null: false                  |
+| post_id            |           | null: false                  |
+| comment            | text      | null: false                  |
 | created_at         | datetime  | null: false                  |
 | updated_at         | datetime  | null: false                  |
 
