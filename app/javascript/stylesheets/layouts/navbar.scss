@@ -46,10 +46,10 @@
   .navbar {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
-    height: 50px;
+    height: 100%;
     color: orange;
     &__brand {
-      height: 50px;
+      height: 100%;
       width: 176px;
       background-size: 114px;
     }
@@ -90,12 +90,12 @@
   .navbar {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
-    height: 50px;
+    height: 100%;
     color: orange;
     &__brand {
-      height: 50px;
+      height: 100%;
       width: 100%;
-      background-size: 114px;
+      background-size: 100%;
     }
     &__mainLogo {
       background-repeat: no-repeat;
@@ -117,7 +117,7 @@
         .commonNavIcon {
           height: auto;
           width: auto;
-          background-size: 22px !important;
+          background-size: 100%px !important;
           background-repeat: no-repeat;
         }
         .profile-icon {
