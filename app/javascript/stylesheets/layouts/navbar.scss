@@ -50,6 +50,7 @@
     font-size: 15px;
     float: right;
     color: orange;
+  }
     .navbar {
       background-color: white;
       border-bottom: 1px solid rgba(0, 0, 0, .0975);
@@ -68,33 +69,27 @@
         font-size: 10%;
         }
       }
-      &-nav {
-        & > li {
-          float:right;
-          .user-nickname {
-            color: black;
-            font-size: 15px;
-          }
-          .commonNavIcon {
-            height: 10%;
-            width: 10%;
-            background-size: 10%;
-            background-repeat: no-repeat;
-          }
-          .profile-icon {
-            background-image: url("~parts3.png");
-          }
+    }
+      .btn-primary {
+        float:right;
+        margin-left: 0;
+      }
+      .user-nickname {
+        color: black;
+        font-size: 15px;
         }
+      .profile-icon {
+        background-image: url("~parts3.png");
       }
     }
-  }
-}
+    
  /* スマホ表示時 */
  @media screen and (max-width: 599px) {
   .header-list {
     font-size: 15px;
     float: right;
     color: orange;
+  }
     .navbar {
       background-color: white;
       border-bottom: 1px solid rgba(0, 0, 0, .0975);
@@ -113,27 +108,16 @@
         font-size: 10%;
         }
       }
-      &-nav {
-        & > li {
-          float:right;
-          &:first-child {
-            margin-left: 0;
-          }
-          .user-nickname {
-            color: black;
-            font-size: 15px;
-          }
-          .commonNavIcon {
-            height: 10%;
-            width: 10%;
-            background-size: 10%;
-            background-repeat: no-repeat;
-          }
-          .profile-icon {
-            background-image: url("~parts3.png");
-          }
+    }
+      .btn-primary {
+        float:right;
+        margin-left: 0;
+      }
+      .user-nickname {
+        color: black;
+        font-size: 15px;
         }
+      .profile-icon {
+        background-image: url("~parts3.png");
       }
     }
-  }
-}
