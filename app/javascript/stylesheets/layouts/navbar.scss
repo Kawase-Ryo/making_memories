@@ -48,12 +48,10 @@
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
     height: 100px;
     color: orange;
-    font-size: 5px;
     &__brand {
       height: 50px;
       width: 1024px;
       background-size: 50%;
-      font-size: 5px;
     }
     &__mainLogo {
       background-repeat: no-repeat;
@@ -61,23 +59,24 @@
       img .nav-image {
       max-width: 18px; 
       height:18px;
-      font-size: 5px;
+      font-size: 18px;
       }
     }
     &-nav {
       & > li {
         margin-left: 20px;
+
         &:first-child {
           margin-left: 0;
         }
         .user-nickname {
           color: black;
-          font-size: 18px;
+          font-size: 40px;
         }
         .commonNavIcon {
           height: 24px;
           width: 24px;
-          background-size: 18px;
+          background-size: auto;
           background-repeat: no-repeat;
         }
         .profile-icon {
@@ -100,18 +99,23 @@
       height: 50%;
       width:393px;
       background-size: 20%;
-      font-size: 5px;
-    }
+      .h1 {
+        font-size: 5px;
+      }
     &__mainLogo {
       background-repeat: no-repeat;
       background-image: url("~nav-title.png");
       img .nav-image {
-        max-width: 18px;
+        width: 20%;
       }
     }
+  }
     &-nav {
       & > li {
-        margin-left: 20px;
+        margin-left: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &:first-child {
           margin-left: 0;
         }
@@ -120,8 +124,8 @@
           font-size: 18px;
         }
         .commonNavIcon {
-          height: 24px;
-          width: 24px;
+          height: 10px;
+          width: 10px;
           background-size: 20%;
           background-repeat: no-repeat;
         }
