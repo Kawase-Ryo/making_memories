@@ -99,7 +99,7 @@
       height: 50%;
       width:393px;
       background-size: 20%;
-      .h1 {
+      & > h1 {
         font-size: 5px;
       }
     &__mainLogo {
@@ -114,14 +114,14 @@
       & > li {
         margin-left: 5px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         &:first-child {
           margin-left: 0;
         }
         .user-nickname {
           color: black;
-          font-size: 18px;
+          font-size: 5px;
         }
         .commonNavIcon {
           height: 10px;
