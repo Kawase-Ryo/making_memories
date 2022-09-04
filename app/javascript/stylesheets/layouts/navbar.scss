@@ -96,7 +96,7 @@
     font-size: 15px;
     margin: 10px;
   }
-  li {
+  .li {
     float:left;
     list-style: none; 
     margin:auto;
@@ -106,6 +106,9 @@
     background-repeat: no-repeat;
     background-image: url("~nav-title.png");
     width: 20%;
+  }
+  .profile-icon {
+    background-image: url("~parts3.png");
   }
   .navbar {
     background-color: white;
@@ -131,9 +134,6 @@
         .user-nickname {
           color: black;
           font-size: 5px;
-        }
-        .profile-icon {
-          background-image: url("~parts3.png");
         }
       }
     }
