@@ -20,8 +20,6 @@
   }
   &-nav {
     & > li {
-      padding-left: 20px;
-      padding-right: 20px;
       margin-left: 20px;
       &:first-child {
         margin-left: 0;
@@ -39,10 +37,6 @@
       .profile-icon {
         background-image: url("~parts3.png");
       }
-      .col {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
     }
   }
 }
@@ -55,9 +49,9 @@
     height: 100px;
     color: orange;
     &__brand {
-      height: 100px;
-      width: 176px;
-      background-size: 114px;
+      height: 90%;
+      width: 100%;
+      background-size: 100%;
     }
     &__mainLogo {
       background-repeat: no-repeat;
@@ -99,8 +93,8 @@
     height: 100px;
     color: orange;
     &__brand {
-      height: 100px;
-      width: 176px;
+      height: 100%;
+      width: 100%;
       background-size: 114px;
     }
     &__mainLogo {
