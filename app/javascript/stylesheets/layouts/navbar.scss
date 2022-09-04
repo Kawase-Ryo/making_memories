@@ -42,7 +42,7 @@
 }
 
 /* タブレット表示時 */
-@media screen and  (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .navbar {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
@@ -86,7 +86,7 @@
 }
 
  /* スマホ表示時 */
- @media screen and  (max-width: 599px) {
+ @media screen and (max-width: 599px) {
   .navbar {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
