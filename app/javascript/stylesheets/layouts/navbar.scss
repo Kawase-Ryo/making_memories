@@ -96,16 +96,10 @@
     font-size: 15px;
     margin: 10px;
   }
-  .li {
+  .container-fluid li {
     float:left;
-    list-style: none; 
     margin:auto;
     text-align:center
-  }
-  .navbar__mainLogo {
-    background-repeat: no-repeat;
-    background-image: url("~nav-title.png");
-    width: 20%;
   }
   .profile-icon {
     background-image: url("~parts3.png");
