@@ -47,7 +47,9 @@
 /* タブレット表示時 */
 @media screen and (max-width: 1024px) {
   .container-fluid{
-    text-align: center;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, .0975);
+    height: 100px;
   .header-list {
     font-size: 15px;
     float: right;
@@ -57,86 +59,49 @@
     float: left;
     text-decoration: none;
   }
-}
-    .navbar {
-      background-color: white;
-      border-bottom: 1px solid rgba(0, 0, 0, .0975);
-      height: 100px;
-      &__brand {
-        height: 10%;
-        width: 393px;
-        background-size: 10%;
-      }
-      &__mainLogo {
-        background-repeat: no-repeat;
-        background-image: url("~nav-title.png");
-        img .nav-image {
-        width: 10%; 
-        height:10%;
-        font-size: 10%;
-        }
-      }
-    }
-      .user-nickname {
-        color: black;
-        font-size: 15px;
-        }
-      .commonNavIcon {
-        height: 24px;
-        width: 24px;
-        background-size: 22px !important;
-        background-repeat: no-repeat;
-      .profile-icon {
-        background-image: url("~parts3.png");
-      }
+  .user-nickname {
+    color: black;
+    font-size: 15px;
+ }
+  .commonNavIcon {
+    height: 24px;
+    width: 24px;
+    background-size: 22px !important;
+    background-repeat: no-repeat;
+    .profile-icon {
+    background-image: url("~parts3.png");
     }
   }
+}
+}
 
  /* スマホ表示時 */
  @media screen and (max-width: 599px) {
   .container-fluid{
-    text-align: center;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, .0975);
+    height: 100px;
   .header-list {
     font-size: 15px;
     float: right;
     color: orange;
   }
-}
   .btn-primary {
     float: left;
     text-decoration: none;
   }
-    .navbar {
-      background-color: white;
-      border-bottom: 1px solid rgba(0, 0, 0, .0975);
-      height: 100px;
-
-      &__brand {
-        height: 10%;
-        width: 393px;
-        background-size: 10%;
-      }
-      &__mainLogo {
-        background-repeat: no-repeat;
-        background-image: url("~nav-title.png");
-        img .nav-image {
-        width: 10%; 
-        height:10%;
-        font-size: 10%;
-        }
-      }
-    }
-      .user-nickname {
-        color: black;
-        font-size: 15px;
-        }
-      .commonNavIcon {
-        height: 24px;
-        width: 24px;
-        background-size: 22px !important;
-        background-repeat: no-repeat;
-      .profile-icon {
-        background-image: url("~parts3.png");
-      }
+  .user-nickname {
+    color: black;
+    font-size: 15px;
+ }
+  .commonNavIcon {
+    height: 24px;
+    width: 24px;
+    background-size: 22px !important;
+    background-repeat: no-repeat;
+    .profile-icon {
+    background-image: url("~parts3.png");
     }
   }
+}
+}
