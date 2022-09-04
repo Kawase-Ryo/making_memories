@@ -96,8 +96,11 @@
     font-size: 15px;
     margin: 10px;
   }
-  .btn {
+  li {
     float:left;
+    list-style: none; 
+    margin:auto;
+    text-align:center
   }
   .navbar__mainLogo {
     background-repeat: no-repeat;
