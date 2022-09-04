@@ -108,8 +108,11 @@
   }
     &-nav {
       & > li {
-        margin-left: 5px;
         float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5px;
         &:first-child {
           margin-left: 0;
         }
@@ -130,6 +133,6 @@
     }
   }
   .navbar__brand navbar__mainLogo {
-    font-size: 5px;
+    font-size: 1px;
   }
 }
