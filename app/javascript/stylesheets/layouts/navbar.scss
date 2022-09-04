@@ -96,7 +96,7 @@
     font-size: 15px;
     margin: 10px;
   }
-  .container-fluid li {
+  li {
     float:left;
     margin:auto;
     text-align:center
@@ -104,25 +104,16 @@
   .profile-icon {
     background-image: url("~parts3.png");
   }
-  .navbar {
+  .container-fluid {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
     height: 100px;
     color: orange;
     height: 50%;
     width:393px;
-    background-size: 20%;
-    background-repeat: no-repeat;
-    background-image: url("~nav-title.png");
-    width: 20%;
+    }
+    .user-nickname {
+      color: black;
+      font-size: 5px;
     }
   }
-    &-nav {
-        &:first-child {
-          margin-left: 0;
-        }
-        .user-nickname {
-          color: black;
-          font-size: 5px;
-        }
-      }
