@@ -71,8 +71,6 @@
       }
       &-nav {
         & > li {
-          float: right;
-          margin:auto;
           text-align:center;
           .user-nickname {
             color: black;
@@ -119,8 +117,6 @@
       }
       &-nav {
         & > li {
-          float: right;
-          margin:auto;
           text-align:center;
           &:first-child {
             margin-left: 0;
