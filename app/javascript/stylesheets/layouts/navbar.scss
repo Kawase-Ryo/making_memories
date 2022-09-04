@@ -89,6 +89,9 @@
 
  /* スマホ表示時 */
  @media screen and (max-width: 599px) {
+  .header-list {
+    font-size: 5px;
+  }
   .navbar {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
@@ -131,8 +134,5 @@
         }
       }
     }
-  }
-  .navbar__brand navbar__mainLogo {
-    font-size: 1px;
   }
 }
