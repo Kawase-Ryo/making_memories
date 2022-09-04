@@ -27,7 +27,7 @@
     @media screen and (max-width: 768px) {
       .top-wrapper {
         height: auto;
-        width: auto;
+        max-width:100%;
         background-image: url('~backgroundimg.jpg');
         background-size: cover;
       }
@@ -52,14 +52,14 @@
   
     @media screen and (max-width: 489px) {
       .top-wrapper {
-        height: auto;
-        width: auto;
+        height: 701px;
+        width:370px;
         background-image: url('~backgroundimg.jpg');
         background-size: cover;
       }
         .top-content{
            color: red;
-           padding-top: 300px;
+           padding-top: 200px;
           h1 {
             font-size: 18px;
             margin-bottom: 25px;
@@ -71,7 +71,7 @@
             font-size: 18px;
             margin: 20px auto 50px auto;
             font-weight: bold;
-            width: 800px;
+            width: 370px;
           }
        }
     }
