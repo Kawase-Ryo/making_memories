@@ -48,7 +48,7 @@
 @media screen and (max-width: 1024px) {
   .header-list {
     font-size: 15px;
-    float: right;
+    float: left;
     margin: 20px;
     color: orange;
     .navbar {
@@ -71,7 +71,7 @@
       }
       &-nav {
         & > li {
-          float:left;
+          float:right;
           .user-nickname {
             color: black;
             font-size: 15px;
@@ -94,7 +94,7 @@
  @media screen and (max-width: 599px) {
   .header-list {
     font-size: 15px;
-    float: right;
+    float: left;
     margin: 10px;
     color: orange;
     .navbar {
@@ -117,7 +117,7 @@
       }
       &-nav {
         & > li {
-          float:left;
+          float:right;
           &:first-child {
             margin-left: 0;
           }
