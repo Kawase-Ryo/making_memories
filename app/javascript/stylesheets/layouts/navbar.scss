@@ -95,25 +95,48 @@
   .header-list {
     font-size: 15px;
     margin: 10px;
-  }
-  li {
-    float:left;
-    margin:auto;
-    text-align:center
-  }
-  .profile-icon {
-    background-image: url("~parts3.png");
-  }
-  .container-fluid {
-    background-color: white;
-    border-bottom: 1px solid rgba(0, 0, 0, .0975);
-    height: 100px;
     color: orange;
-    height: 50%;
-    width:393px;
-    }
-    .user-nickname {
-      color: black;
-      font-size: 5px;
+    .navbar {
+      background-color: white;
+      border-bottom: 1px solid rgba(0, 0, 0, .0975);
+      height: 100px;
+      color: orange;
+      &__brand {
+        height: 50%;
+        width: 393px;
+        background-size: 50%;
+      }
+      &__mainLogo {
+        background-repeat: no-repeat;
+        background-image: url("~nav-title.png");
+        img .nav-image {
+        max-width: 18px; 
+        height:18px;
+        font-size: 18px;
+        }
+      }
+      &-nav {
+        & > li {
+          margin-left: 20px;
+  
+          &:first-child {
+            margin-left: 0;
+          }
+          .user-nickname {
+            color: black;
+            font-size: 20px;
+          }
+          .commonNavIcon {
+            height: 24px;
+            width: 24px;
+            background-size: auto;
+            background-repeat: no-repeat;
+          }
+          .profile-icon {
+            background-image: url("~parts3.png");
+          }
+        }
+      }
     }
   }
+}
