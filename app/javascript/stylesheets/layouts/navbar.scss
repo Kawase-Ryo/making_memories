@@ -50,14 +50,16 @@
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
     height: 100px;
+    position:relative;
   .header-list {
     font-size: 15px;
     float: right;
     color: orange;
   }
   .btn-primary {
-    float: left;
-    text-decoration: none;
+    position:absolute;
+	  left:10px;
+	  bottom:10px;
   }
   .user-nickname {
     color: black;
@@ -81,14 +83,16 @@
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
     height: 100px;
+    position:relative;
   .header-list {
     font-size: 15px;
     float: right;
     color: orange;
   }
   .btn-primary {
-    float: left;
-    text-decoration: none;
+    position:absolute;
+	  left:10px;
+	  bottom:10px;
   }
   .user-nickname {
     color: black;
