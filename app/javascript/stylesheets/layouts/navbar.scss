@@ -1,5 +1,8 @@
 //header
-
+.header-list {
+  font-size: 40px;
+  margin: 30px;
+}
 .navbar {
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, .0975);
@@ -126,7 +129,7 @@
           background-size: 20%;
           background-repeat: no-repeat;
         }
-        .btn {
+        .btn-primary {
         float: left;
         display: flex;
         justify-content: center;
