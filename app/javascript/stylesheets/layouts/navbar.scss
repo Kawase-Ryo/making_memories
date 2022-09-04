@@ -26,7 +26,7 @@
       }
       .user-nickname {
         color: black;
-        font-size: 40px;
+        font-size: 22px;
       }
       .commonNavIcon {
         height: 24px;
@@ -49,16 +49,15 @@
     height: 100px;
     color: orange;
     &__brand {
-      height: 90%;
-      width: 100%;
-      background-size: 100%;
+      height: 100px;
+      width: 176px;
+      background-size: 114px;
     }
     &__mainLogo {
       background-repeat: no-repeat;
       background-image: url("~nav-title.png");
       img .nav-image {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
       }
     }
     &-nav {
@@ -93,16 +92,15 @@
     height: 100px;
     color: orange;
     &__brand {
-      height: 100%;
-      width: 100%;
+      height: 100px;
+      width: 176px;
       background-size: 114px;
     }
     &__mainLogo {
       background-repeat: no-repeat;
       background-image: url("~nav-title.png");
       img .nav-image {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
       }
     }
     &-nav {
@@ -113,7 +111,7 @@
         }
         .user-nickname {
           color: black;
-          font-size: 40px;
+          font-size: 18px;
         }
         .commonNavIcon {
           height: 24px;
