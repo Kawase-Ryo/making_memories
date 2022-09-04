@@ -61,6 +61,7 @@
       img .nav-image {
       max-width: 18px; 
       height:18px;
+      font-size: 5px;
       }
     }
     &-nav {
@@ -97,8 +98,9 @@
     font-size: 5px;
     &__brand {
       height: 50%;
-      width:599px;
+      width:393px;
       background-size: 20%;
+      font-size: 5px;
     }
     &__mainLogo {
       background-repeat: no-repeat;
