@@ -46,15 +46,18 @@
 
 /* タブレット表示時 */
 @media screen and (max-width: 1024px) {
+  .container-fluid{
+    text-align: center;
   .header-list {
     font-size: 15px;
     float: right;
     color: orange;
   }
-  .nav li {
-    float: right;
+  .btn-primary {
+    float: left;
     text-decoration: none;
   }
+}
     .navbar {
       background-color: white;
       border-bottom: 1px solid rgba(0, 0, 0, .0975);
@@ -91,19 +94,23 @@
 
  /* スマホ表示時 */
  @media screen and (max-width: 599px) {
+  .container-fluid{
+    text-align: center;
   .header-list {
     font-size: 15px;
     float: right;
     color: orange;
   }
-  .nav li {
-    float: right;
+}
+  .btn-primary {
+    float: left;
     text-decoration: none;
   }
     .navbar {
       background-color: white;
       border-bottom: 1px solid rgba(0, 0, 0, .0975);
       height: 100px;
+
       &__brand {
         height: 10%;
         width: 393px;
