@@ -96,17 +96,14 @@
     font-size: 15px;
     margin: 10px;
   }
-  .btn btn-primary {
+  .btn {
     float:left;
-    list-style: none; 
-    margin:auto;
-    text-align:center
   }
-  .navbar__brand navbar__mainLogo {
-    height: 10px;
-    width: 10px;
-    background-size: 20%;
+  .navbar__mainLogo {
     background-repeat: no-repeat;
+    background-image: url("~nav-title.png");
+      img .nav-image {
+        width: 20%;
   }
   .navbar {
     background-color: white;
