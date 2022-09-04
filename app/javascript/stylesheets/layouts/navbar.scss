@@ -19,7 +19,7 @@
     }
   }
   &-nav {
-    & > li {
+    & > col-xl-12 {
       margin-left: 20px;
       &:first-child {
         margin-left: 0;
@@ -62,7 +62,7 @@
       }
     }
     &-nav {
-      & > li {
+      & > col-sm-12 {
         margin-left: 20px;
         &:first-child {
           margin-left: 0;
@@ -106,7 +106,7 @@
       }
     }
     &-nav {
-      & > li {
+      & > col-xs-12 {
         margin-left: 20px;
         &:first-child {
           margin-left: 0;
