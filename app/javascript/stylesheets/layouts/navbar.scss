@@ -129,11 +129,11 @@
           background-size: 20%;
           background-repeat: no-repeat;
         }
-        .btn btn-primarybtn-primary {
-        float: left;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        .btn {
+          float:left;
+          list-style: none; 
+          margin:auto;
+          text-align:center
         }
         .profile-icon {
           background-image: url("~parts3.png");
