@@ -48,6 +48,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
     height: 100px;
     color: orange;
+    font-size: 5px;
     &__brand {
       height: 50px;
       width: 1024px;
@@ -92,11 +93,11 @@
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
     height: 100px;
     color: orange;
-    font-size: 18px;
+    font-size: 5px;
     &__brand {
-      height: 50px;
+      height: 50%;
       width:599px;
-      background-size: 50%;
+      background-size: 20%;
     }
     &__mainLogo {
       background-repeat: no-repeat;
@@ -118,7 +119,7 @@
         .commonNavIcon {
           height: 24px;
           width: 24px;
-          background-size: 18px;
+          background-size: 20%;
           background-repeat: no-repeat;
         }
         .profile-icon {
