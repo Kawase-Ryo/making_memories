@@ -51,10 +51,12 @@
     float: right;
     color: orange;
   }
-  .btn {
+  .btn-primary {
+    float: left;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    text-decoration: none;
   }
     .navbar {
       background-color: white;
@@ -79,11 +81,17 @@
         color: black;
         font-size: 15px;
         }
+      .commonNavIcon {
+        height: 24px;
+        width: 24px;
+        background-size: 22px !important;
+        background-repeat: no-repeat;
       .profile-icon {
         background-image: url("~parts3.png");
       }
     }
-    
+  }
+
  /* スマホ表示時 */
  @media screen and (max-width: 599px) {
   .header-list {
@@ -91,10 +99,12 @@
     float: right;
     color: orange;
   }
-  .btn {
+  .btn-primary {
+    float: left;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    text-decoration: none;
   }
     .navbar {
       background-color: white;
@@ -119,7 +129,13 @@
         color: black;
         font-size: 15px;
         }
+      .commonNavIcon {
+        height: 24px;
+        width: 24px;
+        background-size: 22px !important;
+        background-repeat: no-repeat;
       .profile-icon {
         background-image: url("~parts3.png");
       }
     }
+  }

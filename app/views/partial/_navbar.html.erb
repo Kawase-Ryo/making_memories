@@ -10,13 +10,13 @@
         <% if user_signed_in? %>
         <%# ナビゲーションヘッダーにリンクを追加して、リンクをクリックしたら投稿ページに遷移する %>
         <li><%= link_to current_user.name, "/users/#{current_user.id}", class: "user-nickname"  %></li>
-        <li><%= link_to "投稿する", new_post_path, class: "btn" %></li>
-        <li><%= link_to "投稿一覧", posts_path, class: "btn"  %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn" %></li>
+        <li><%= link_to "投稿する", new_post_path, class: "btn-primary" %></li>
+        <li><%= link_to "投稿一覧", posts_path, class: "btn-primary"  %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn-primary" %></li>
         <li><%= link_to "", user_path(current_user), class: "profile-icon" %></li>
         <% else %>
-        <li><%= link_to "ログイン", new_post_path, class: "btn" %></li>
-        <li><%= link_to "新規登録", new_user_registration_path, class: "btn" %></li>
+        <li><%= link_to "ログイン", new_post_path, class: "btn-primary" %></li>
+        <li><%= link_to "新規登録", new_user_registration_path, class: "btn-primary" %></li>
         <% end %>
       </ul>
     </div>
