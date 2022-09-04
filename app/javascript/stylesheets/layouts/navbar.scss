@@ -19,7 +19,7 @@
     }
   }
   &-nav {
-    & > col-xl-12 {
+    & > li {
       margin-left: 20px;
       &:first-child {
         margin-left: 0;
@@ -36,6 +36,9 @@
       }
       .profile-icon {
         background-image: url("~parts3.png");
+      }
+      .col-xl-12 {
+        margin-left: 20px;
       }
     }
   }
@@ -62,7 +65,7 @@
       }
     }
     &-nav {
-      & > col-sm-12 {
+      & > li {
         margin-left: 20px;
         &:first-child {
           margin-left: 0;
@@ -106,7 +109,7 @@
       }
     }
     &-nav {
-      & > col-xs-12 {
+      & > li {
         margin-left: 20px;
         &:first-child {
           margin-left: 0;
