@@ -49,16 +49,16 @@
     height: 100px;
     color: orange;
     &__brand {
-      height: 100px;
-      max-width: 1024px;
-      background-size: 114px;
+      height: 50px;
+      width: 1024px;
+      background-size: 50%;
     }
     &__mainLogo {
       background-repeat: no-repeat;
       background-image: url("~nav-title.png");
       img .nav-image {
       max-width: 18px; 
-      height:auto;
+      height:18px;
       }
     }
     &-nav {
@@ -72,8 +72,8 @@
           font-size: 18px;
         }
         .commonNavIcon {
-          height: auto;
-          width: auto;
+          height: 24px;
+          width: 24px;
           background-size: 18px;
           background-repeat: no-repeat;
         }
@@ -94,9 +94,9 @@
     color: orange;
     font-size: 18px;
     &__brand {
-      height: 100px;
-      max-width:599px;
-      background-size: 100%;
+      height: 50px;
+      width:599px;
+      background-size: 50%;
     }
     &__mainLogo {
       background-repeat: no-repeat;
