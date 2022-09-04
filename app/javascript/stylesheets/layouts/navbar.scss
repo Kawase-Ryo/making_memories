@@ -94,7 +94,19 @@
  @media screen and (max-width: 599px) {
   .header-list {
     font-size: 15px;
-    margin: 30px;
+    margin: 10px;
+  }
+  .btn {
+    float:left;
+    list-style: none; 
+    margin:auto;
+    text-align:center
+  }
+  .commonNavIcon {
+    height: 10px;
+    width: 10px;
+    background-size: 20%;
+    background-repeat: no-repeat;
   }
   .navbar {
     background-color: white;
@@ -122,18 +134,6 @@
         .user-nickname {
           color: black;
           font-size: 5px;
-        }
-        .commonNavIcon {
-          height: 10px;
-          width: 10px;
-          background-size: 20%;
-          background-repeat: no-repeat;
-        }
-        .btn {
-          float:left;
-          list-style: none; 
-          margin:auto;
-          text-align:center
         }
         .profile-icon {
           background-image: url("~parts3.png");
