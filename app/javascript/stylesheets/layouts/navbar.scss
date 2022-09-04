@@ -46,18 +46,18 @@
   .navbar {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
-    height: 100%;
+    height: 100px;
     color: orange;
     &__brand {
-      height: 100%;
-      width: 176px;
+      height: 100px;
+      max-width: 1024px;
       background-size: 114px;
     }
     &__mainLogo {
       background-repeat: no-repeat;
       background-image: url("~nav-title.png");
       img .nav-image {
-      max-width: 100%; 
+      max-width: 40px; 
       height:auto;
       }
     }
@@ -90,18 +90,18 @@
   .navbar {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, .0975);
-    height: 100%;
+    height: 100px;
     color: orange;
     &__brand {
-      height: 100%;
-      width: 100%;
+      height: 100px;
+      max-width:599px;
       background-size: 100%;
     }
     &__mainLogo {
       background-repeat: no-repeat;
       background-image: url("~nav-title.png");
       img .nav-image {
-        max-width: 100%;
+        max-width: 18px;
       }
     }
     &-nav {
