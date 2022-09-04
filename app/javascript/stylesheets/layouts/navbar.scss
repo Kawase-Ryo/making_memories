@@ -71,7 +71,10 @@
       }
       &-nav {
         & > li {
-          text-align:center;
+          margin: 0 auto;
+          display: table;
+          table-layout: fixed;
+          float:none;
           .user-nickname {
             color: black;
             font-size: 15px;
@@ -117,7 +120,10 @@
       }
       &-nav {
         & > li {
-          text-align:center;
+          margin: 0 auto;
+          display: table;
+          table-layout: fixed;
+          float:none;
           &:first-child {
             margin-left: 0;
           }
