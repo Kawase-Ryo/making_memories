@@ -101,9 +101,9 @@
       border-bottom: 1px solid rgba(0, 0, 0, .0975);
       height: 100px;
       &__brand {
-        height: 50%;
+        height: 10%;
         width: 393px;
-        background-size: 50%;
+        background-size: 10%;
       }
       &__mainLogo {
         background-repeat: no-repeat;
@@ -111,7 +111,7 @@
         img .nav-image {
         width: 10px; 
         height:10px;
-        font-size: 20%;
+        font-size: 10%;
         }
       }
       &-nav {
@@ -124,11 +124,11 @@
           }
           .user-nickname {
             color: black;
-            font-size: 20px;
+            font-size: 15px;
           }
           .commonNavIcon {
-            height: 20%;
-            width: 20%;
+            height: 10%;
+            width: 10%;
             background-size: auto;
             background-repeat: no-repeat;
           }
