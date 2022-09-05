@@ -45,8 +45,60 @@
 }
 
 /* タブレット表示時 */
-//@media screen and (max-width: 1024px) {
-  
+@media screen and (max-width: 1024px) {
+  .header-list {
+    font-size: 20px;
+    margin: auto;
+    color: orange;
+  }
+    &-nav {
+      & > li {
+        margin-left: 20px;
+        &:first-child {
+          margin-left: 0;
+        }
+        .user-nickname {
+          color: black;
+          font-size: 18px;
+        }
+        .commonNavIcon {
+          height: 20%;
+          width: 20%;
+          background-size: 20% !important;
+          background-repeat: no-repeat;
+        }
+        .profile-icon {
+          background-image: url("~parts3.png");
+        }
+      }
+    }
+}  
  /* スマホ表示時 */
- //@media screen and (max-width: 599px) {
-  
+ @media screen and (max-width: 599px) {
+  .header-list {
+    font-size: 20px;
+    margin: auto;
+    color: orange;
+  } 
+  &-nav {
+    & > li {
+      margin-left: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+      .user-nickname {
+        color: black;
+        font-size: 18px;
+      }
+      .commonNavIcon {
+        height: 20%;
+        width: 20%;
+        background-size: 20% !important;
+        background-repeat: no-repeat;
+      }
+      .profile-icon {
+        background-image: url("~parts3.png");
+      }
+    }
+  }
+}
