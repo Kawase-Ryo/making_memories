@@ -1,7 +1,7 @@
 <%# ユーザーネームをプロフィールページに表示 %>
 <div class="profile-wrap">
   <div class="row">
-    <div class="col-md-4 text-center">
+    <div class="col-md-8 col-md-2 mx-auto text-center">
       <%# プロフィールアイコンが設定してあるかないかの条件式 %>
       <% if @user.avatar.attached? %> <%# アイコン選択の判定 %>
          <%= image_tag @user.avatar, class: "round-img" %> <%# アイコンを設定していれば %>
