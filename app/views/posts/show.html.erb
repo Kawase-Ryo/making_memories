@@ -14,25 +14,25 @@
             <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
               <%# プロフィールアイコンが設定してあるかないかの条件式 %>
               <% if @post.user.avatar.attached? %>
-                  <%= image_tag @post.user.avatar, class: "post-profile-icon" %> 
+                <%= image_tag @post.user.avatar, class: "post-profile-icon" %>
               <% else %>
-                  <%= image_tag avatar_url(@post.user), class: "post-profile-icon" %>
+                <%= image_tag avatar_url(@post.user), class: "post-profile-icon" %>
               <% end %>
             <% end %>
             <%= link_to user_path(@post.user), class: "black-color no-text-decoration post-user-name",
-              title: @post.user.name do %>
+                        title: @post.user.name do %>
               <strong><%= @post.user.name %></strong>
             <% end %>
 
             <%# 投稿機能の削除機能 %>
             <% if @post.user_id == current_user.id %>
-            <%# 現在サインインしているユーザーと投稿したユーザーが等しければ、リンクを表示させる条件式 %>
+              <%# 現在サインインしているユーザーと投稿したユーザーが等しければ、リンクを表示させる条件式 %>
               <%= link_to post_path(@post), method: :delete, class: "ml-auto mx-0 my-auto" do %>
                 <div class="delete-post-icon">
                 </div>
               <% end %>
             <% end %>
-             <%# 投稿機能の削除機能 %>
+            <%# 投稿機能の削除機能 %>
 
           </div>
           <div class="m-2">
@@ -46,59 +46,63 @@
             <strong>
               <%= @post.description %>
             </strong>
-          </div> 
+          </div>
         </div>
-        
+
         <div class="row parts">
 
-        <%# パスのところにidがついている箇所が2箇所ある。いいねを削除するためには、そのいいねに紐づいている投稿の情報が必要になる。また投稿には複数いいねをつけることができる。その複数のいいねのうち、どのいいねなのかを認識するために、いいねの情報も必要。なのでpost_likeに2つの引数を渡し、どの投稿の、どのいいねを削除するのかを指定する必要がある。今回のコードの場合、@post.idが投稿のidになる。また@post.liked_by(current_user)が現在ログインしているユーザーがいいねした投稿のidを指定%>
-        <div id="like-icon-post-<%= @post.id.to_s %>">
+          <%# パスのところにidがついている箇所が2箇所ある。いいねを削除するためには、そのいいねに紐づいている投稿の情報が必要になる。また投稿には複数いいねをつけることができる。その複数のいいねのうち、どのいいねなのかを認識するために、いいねの情報も必要。なのでpost_likeに2つの引数を渡し、どの投稿の、どのいいねを削除するのかを指定する必要がある。今回のコードの場合、@post.idが投稿のidになる。また@post.liked_by(current_user)が現在ログインしているユーザーがいいねした投稿のidを指定%>
+          <div id="like-icon-post-<%= @post.id.to_s %>">
             <% if @post.liked_by(current_user).present? %>
               <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
             <% else %>
               <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
             <% end %>
           </div>
+          <%# パスのところにidがついている箇所が2箇所ある。いいねを削除するためには、そのいいねに紐づいている投稿の情報が必要になる。また投稿には複数いいねをつけることができる。その複数のいいねのうち、どのいいねなのかを認識するために、いいねの情報も必要。なのでpost_likeに2つの引数を渡し、どの投稿の、どのいいねを削除するのかを指定する必要がある。今回のコードの場合、@post.idが投稿のidになる。また@post.liked_by(current_user)が現在ログインしているユーザーがいいねした投稿のidを指定%>
 
+          <%# パスのところにidがついている箇所が2箇所ある。いいねを削除するためには、そのいいねに紐づいている投稿の情報が必要になる。また投稿には複数いいねをつけることができる。その複数のいいねのうち、どのいいねなのかを認識するために、いいねの情報も必要。なのでpost_likeに2つの引数を渡し、どの投稿の、どのいいねを削除するのかを指定する必要がある。今回のコードの場合、@post.idが投稿のidになる。また@post.liked_by(current_user)が現在ログインしているユーザーがいいねした投稿のidを指定%>
           <div id="like-text-post-<%= @post.id.to_s %>">
-          <%= render "like_text", { likes: @post.likes } %>
+            <%= render "like_text", { likes: @post.likes } %>
           </div>
           <%# パスのところにidがついている箇所が2箇所ある。いいねを削除するためには、そのいいねに紐づいている投稿の情報が必要になる。また投稿には複数いいねをつけることができる。その複数のいいねのうち、どのいいねなのかを認識するために、いいねの情報も必要。なのでpost_likeに2つの引数を渡し、どの投稿の、どのいいねを削除するのかを指定する必要がある。今回のコードの場合、@post.idが投稿のidになる。また@post.liked_by(current_user)が現在ログインしているユーザーがいいねした投稿のidを指定%>
 
-        <div class="post-time"><%= time_ago_in_words(@post.created_at).upcase %>前</div>
-        <hr>
+          <div class="post-time"><%= time_ago_in_words(@post.created_at).upcase %>前</div>
+          <hr>
 
-        <%# 投稿詳細ページでもコメントできるように実装 %>
-        <div class="row parts" id="comment-form-post-<%= @post.id.to_s %>">
-          <%= form_with model: [@post, Comment.new],  class: "w-100" do |f| %>
-            <%= f.hidden_field :user_id, value: current_user.id %>
-            <%= f.hidden_field :post_id, value: @post.id %>
-            <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント100文字まで ...", autocomplete: :off, rows:"7" ,maxlength:"100" %>
-          <% end %>
-        </div>
-        <%# 投稿詳細ページでもコメントできるように実装 %>
-        <div class="comment-post-id">
+          <%# 投稿詳細ページでもコメントできるように実装 %>
+          <div class="row parts" id="comment-form-post-<%= @post.id.to_s %>">
+            <%= form_with model: [@post, Comment.new], class: "w-100" do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :post_id, value: @post.id %>
+              <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント100文字まで ...", autocomplete: :off, rows: "7", maxlength: "100" %>
+            <% end %>
+          </div>
+          <%# 投稿詳細ページでもコメントできるように実装 %>
+          <div class="comment-post-id">
             <div class="m-2">
-              <div id="comment-post-<%= @post.id.to_s %>"> 
-                  <%= render 'comment_list', post: @post %>
+              <div id="comment-post-<%= @post.id.to_s %>">
+                <%= render 'comment_list', post: @post %>
               </div>
               <%# 投稿詳細ページでもコメントできるように実装 %>
 
               <p>住所</p>
               <p><%= @post.address %></p> <%# 住所名表示 %>
+
+              <div id="display"></div>
               <div id='map'></div>
 
-                <style>
-                #map {
-                  margin-bottom: 20px;
-                  height:  300px;
-                  width: 350px;
-                }
-                </style>
+              <style>
+                  #map {
+                      margin-bottom: 20px;
+                      height: 300px;
+                      width: 350px;
+                  }
+              </style>
 
-                <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
-
+              <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
               <script>
+                // 地図の初期表示を行う関数。詳細画面を表示した時点で実行されるため、初期から表示される。
                 function initMap() {
                   // 投稿から住所情報を抽出
                   let inputAddress = '<%= @post.address %>';
@@ -118,7 +122,7 @@
                     // Geocoder(住所から緯度・経度を取得するAPI）に住所情報を渡す
                     'address': inputAddress
                   }, function (results, status) {
-                    if (status == 'OK') { // 住所から緯度経度情報が見つかった場合
+                    if (status == 'OK') {　// 住所から緯度経度情報が見つかった場合
                       // 地図の中心地を、住所に基づく緯度・経度に設定
                       map.setCenter(results[0].geometry.location);
 
