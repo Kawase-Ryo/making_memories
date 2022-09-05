@@ -9,8 +9,6 @@
       <ul class="navbar-nav ml-md-auto align-items-center">
         <% if user_signed_in? %>
         <%# ナビゲーションヘッダーにリンクを追加して、リンクをクリックしたら投稿ページに遷移する %>
-        <div class="row">
-        <div class="col-lg-12 col-sm-12 col-md-12">
         <li><%= link_to current_user.name, "/users/#{current_user.id}", class: "user-nickname"  %></li>
         <li><%= link_to "投稿する", new_post_path, class: "btn btn-primary" %></li>
         <li><%= link_to "投稿一覧", posts_path, class: "btn btn-primary"  %></li>
@@ -20,10 +18,7 @@
         <li><%= link_to "ログイン", new_post_path, class: "btn btn-primary" %></li>
         <li><%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %></li>
         <% end %>
-        </div>
-        </div>
       </ul>
     </div>
-  </div>
   </div>
 </nav>
