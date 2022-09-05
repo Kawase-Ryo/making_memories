@@ -63,3 +63,5 @@ gem "mini_magick"
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'dotenv-rails'
+gem 'bootstrap-sass', '3.3.6'
+gem 'jquery-rails'
