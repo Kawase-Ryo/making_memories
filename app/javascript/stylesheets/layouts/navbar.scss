@@ -8,6 +8,9 @@
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, .0975);
   height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__brand {
     height: 100px;
     width: 176px;
