@@ -17,7 +17,7 @@
     font-weight: bold;
     height: 26px;
     line-height: 26px;
-    padding: 0px 0px;
+    padding: 0 26px;
     border-color: #dbdbdb;
     font-size: 14px;
   }
@@ -35,3 +35,7 @@
       cursor: pointer;
     }
   }
+
+.btn btn-outline-dark common-btn edit-profile-btn {
+  padding: 10px 10px;
+}
