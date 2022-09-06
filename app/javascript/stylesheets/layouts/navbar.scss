@@ -1,73 +1,43 @@
-//header
-.header-list {
-  font-size: 40px;
-  margin: 30px;
-  color: orange;
-}
-.navbar {
-  background-color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, .0975);
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &__brand {
-    height: 100px;
-    width: 176px;
-    background-size: 114px;
-  }
-  &__mainLogo {
-    background-repeat: no-repeat;
-    background-image: url("~nav-title.png");
-    img .nav-image {
-    width: 100%; 
-    height:auto;
-    }
-  }
-  &-nav {
-    & > li {
-      margin-left: 20px;
-      &:first-child {
-        margin-left: 0;
-      }
-      .user-nickname {
-        color: black;
-        font-size: 22px;
-      }
-      .commonNavIcon {
-        height: 24px;
-        width: 24px;
-        background-size: 22px !important;
-        background-repeat: no-repeat;
-      }
-      .profile-icon {
-        background-image: url("~parts3.png");
-      }
-    }
-  }
-}
-
-/* タブレット表示時 */
-@media screen and (max-width: 1024px) {
+//  //header
   .header-list {
-    font-size: 20px;
-    margin: auto;
+    font-size: 30px;
+//    margin: 30px;
     color: orange;
   }
+  .navbar {
+//    background-color: white;
+//    border-bottom: 1px solid rgba(0, 0, 0, .0975);
+//    height: 100px;
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+    &__brand {
+      height: 100px;
+      width: 176px;
+     background-size: 114px;
+    }
+    &__mainLogo {
+      background-repeat: no-repeat;
+      background-image: url("~nav-title.png");
+      img .nav-image {
+      width: 100%; 
+      height:auto;
+      }
+    }
     &-nav {
       & > li {
-        margin-left: 20px;
-        &:first-child {
-          margin-left: 0;
+//        margin-left: 20px;
+//        &:first-child {
+//          margin-left: 0;
         }
         .user-nickname {
           color: black;
-          font-size: 18px;
+          font-size: 22px;
         }
         .commonNavIcon {
-          height: 20%;
-          width: 20%;
-          background-size: 20% !important;
+          height: 24px;
+          width: 24px;
+          background-size: 22px !important;
           background-repeat: no-repeat;
         }
         .profile-icon {
@@ -75,33 +45,4 @@
         }
       }
     }
-}  
- /* スマホ表示時 */
- @media screen and (max-width: 599px) {
-  .header-list {
-    font-size: 20px;
-    margin: auto;
-    color: orange;
-  } 
-  &-nav {
-    & > li {
-      margin-left: 20px;
-      &:first-child {
-        margin-left: 0;
-      }
-      .user-nickname {
-        color: black;
-        font-size: 18px;
-      }
-      .commonNavIcon {
-        height: 20%;
-        width: 20%;
-        background-size: 20% !important;
-        background-repeat: no-repeat;
-      }
-      .profile-icon {
-        background-image: url("~parts3.png");
-      }
-    }
-  }
-}
+//  }

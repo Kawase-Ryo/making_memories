@@ -52,8 +52,6 @@ end
 
 group :production do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'geocoder'
-  gem 'dotenv-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -66,3 +64,5 @@ gem 'rails-i18n'
 gem 'dotenv-rails'
 gem 'bootstrap-sass', '3.3.6'
 gem 'jquery-rails'
+gem 'geocoder'
+gem 'dotenv-rails'
