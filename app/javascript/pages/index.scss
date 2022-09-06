@@ -1,5 +1,5 @@
 .top-wrapper {
-    width: 100%;
+    width: 100vh;
     height: 100vh;
     background-image: url('~backgroundimg.jpg');
     background-position: center;
@@ -15,21 +15,21 @@
         font-size: 55px;
         margin-bottom: 25px;
         font-weight: bold;
-        text-align:center!important;
+        text-align:center;
         font-family: 'Hiragino Maru Gothic Pro', 'MS UI Gothic', sans-serif;
       }
       h2 {
         color: red;
         margin: 20px 0px 50px 0px;
         font-weight: bold;
-        text-align:center!important;
+        text-align: center;
         font-family: 'Hiragino Maru Gothic Pro', 'MS UI Gothic', sans-serif;
       }
     }
 /* タブレット表示時 */
     @media screen and (max-width: 1024px) {
       top-wrapper {
-        width: 100%;
+        width: 375px;
         height: 100vh;
         background-image: url('~backgroundimg.jpg');
         background-position: center;
@@ -61,15 +61,15 @@
             margin: 20px 0px 50px 0px;
             font-weight: bold;
             font-family: 'Hiragino Maru Gothic Pro', 'MS UI Gothic', sans-serif;
-            text-align:center!important;;
-            width: 599px;
+            text-align: center;
+            width: 375px;
           }
         }
     }  
      /* スマホ表示時 */
      @media screen and (max-width: 599px) {
       top-wrapper {
-        width: 100%;
+        width: 375px;
         height: 100vh;
         background-image: url('~backgroundimg.jpg');
         background-position: center;
@@ -85,7 +85,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: cover!important;;
+        background-size: cover!important;
     }
         .top-content{
            color: red;
@@ -101,8 +101,8 @@
             margin: 20px 0px 50px 0px;
             font-weight: bold;
             font-family: 'Hiragino Maru Gothic Pro', 'MS UI Gothic', sans-serif;
-            text-align:center;
-            width: 599px;
+            text-align: center;
+            width: 375px;
           }
         }
     }  
