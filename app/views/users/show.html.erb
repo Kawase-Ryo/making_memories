@@ -10,18 +10,17 @@
       <% end %>  
     </div>
     <div class="col-md-8">
-      <div class="row">
         <h1><%= @user.name %></h1>
         
         <%#サインインしているユーザーが@userと一致したら、真を返すという条件式%>
         <% if @user == current_user %>
         
-        <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-primary common-btn edit-profile-btn" %>
+        <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
         <button type="button" class="setting" data-toggle="modal" data-target="#exampleModal"></button>
 
         <% end %>
         <%#サインインしているユーザーが@userと一致したら、真を返すという条件式%>
-
+        
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -38,7 +37,6 @@
             </div>
           </div>
         </div>
-      </div>
 
         <div class="row">
           <h4>
